@@ -24,30 +24,38 @@ node_t Node(void *data)
 void addNode(node_t head, void *data)
 {
 
-  node_t tmp = head;
-  if( tmp == NULL ){
-    tmp = Node(data);
+  node_t tmp = NULL;
+
+  if( head == NULL ){
+    head = Node(data);
+    printf("Head Node @ %p\n",head);
+    assert(head != NULL);
   }else{
-    while( tmp != NULL ){
+    tmp = head;
+    while( tmp->link != NULL ){
+      //tmp = tmp->link;
+      fprintf(stdout,"Skipped address %p\n", tmp);
       tmp = tmp->link;
   }
-    tmp = Node(data);
+    tmp->link = Node(data);
   }
 }
 
 void rmList(node_t head)
 {
-  node_t n,tmp = head;
+  node_t n = NULL;
+  node_t tmp = head;
+  printf("Head's address is %p\n", tmp);
   if (tmp == NULL) {
     puts("List Empty\n");
+    exit(-1);
   }else{
+    static int i = 0;
     while(tmp != NULL){
       n = tmp->link;
-      printf("Freeing address %p\n", tmp);
+      printf("Freeing address %p at position %d\n", tmp, i++);
       free(tmp);
       tmp = n;
     }
-    printf("Finally freeing address %p\n",tmp);
-    free(tmp);
   }
 }
