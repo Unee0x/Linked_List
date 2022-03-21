@@ -1,6 +1,5 @@
 .gitignore*
-.c~
-.h~
+.~
 vgcore.*
 clangd_13.0.0
 .gitignore
