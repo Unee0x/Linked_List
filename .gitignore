@@ -1,3 +1,4 @@
+.gitignore*
 .*~
 vgcore.*
 clangd_13.0.0
