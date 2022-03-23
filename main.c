@@ -8,10 +8,12 @@ int main( void ){
   int n = rand()%9+0;
   node_t head = Node(&n);
 
-  for(int i = 0; i < 25;i++){
-    int r = rand()%9+0;
-    addNode(head, &r);
+  
+  for(int i=0;i < 10;i++){
+    //    int r = rand()%9+0;
+    addNode(head, &n);
   }
+  insNode(head, &n, 3);
 
   rmList(head);
   

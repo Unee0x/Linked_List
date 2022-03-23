@@ -29,8 +29,11 @@ void insNode(node_t head, void *data, int pos)
   tmp = head;
   
   while( tmp->link != NULL ){
-    if( tmp->pos == (pos - 1)){
-      cp = tmp;
+    if( tmp->pos == pos ){
+      printf("At position %d is %p\n",tmp->pos, tmp);
+      cp = Node( data );
+      cp->link = tmp->link;
+      tmp = cp;
     }
     tmp = tmp->link;
   }
@@ -45,7 +48,7 @@ void addNode(node_t head, void *data)
   
     tmp = head;
     while( tmp->link != NULL ){
-      fprintf(stdout,"Skipped address %p\n", tmp);
+      //fprintf(stdout,"Skipped address %p\n", tmp);
       tmp = tmp->link;
   }
     tmp->link = Node(data);
