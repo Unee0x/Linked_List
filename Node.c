@@ -23,22 +23,29 @@ node_t Node(void *data)
   return tmp;
 }
 
-void insNode(node_t head, void *data, int pos)
+void showList(node_t head)
 {
-  node_t cp, tmp = NULL;
-  tmp = head;
-  
-  while( tmp->link != NULL ){
-    if( tmp->pos == pos ){
-      printf("At position %d is %p\n",tmp->pos, tmp);
-      cp = Node( data );
-      cp->link = tmp->link;
-      tmp = cp;
-    }
+  node_t tmp = head;
+  while(tmp != NULL){
+    printf("At position %d is at address %p\n", tmp->pos, tmp);
     tmp = tmp->link;
   }
+  puts("############################\n");
+}
+
+void insNode(node_t head, void *data, int pos)
+{
+  node_t cp = Node(data);
+  node_t tmp = NULL;
+  tmp = head;
   
-  
+  while( tmp != NULL ){
+    if( tmp->pos == pos-1 ){
+      printf("At position %d is address %p\n",tmp->pos, tmp);
+      /* TODO  */
+    }
+    tmp = tmp->link;
+  }  
 }
 
 void addNode(node_t head, void *data)

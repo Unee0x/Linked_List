@@ -13,9 +13,12 @@ int main( void ){
     //    int r = rand()%9+0;
     addNode(head, &n);
   }
-  insNode(head, &n, 3);
 
-  rmList(head);
+  showList(head);
+  insNode(head, &n, 3);
+  showList(head);
+
+  //rmList(head);
   
   return 0;
 }
