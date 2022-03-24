@@ -19,7 +19,7 @@ node_t Node(void *data)
   tmp->data = data;
   tmp->pos = sz; 
   tmp->link = NULL;
-  printf("New node @ address %p in position %d\n", tmp, sz++);
+  printf("New node at address %p in position %d\n", tmp, sz++);
   return tmp;
 }
 
@@ -41,8 +41,8 @@ void insNode(node_t head, void *data, int pos)
   
   while( tmp != NULL ){
     if( tmp->pos == pos-1 ){
-      printf("At position %d is address %p\n",tmp->pos, tmp);
-      /* TODO  */
+      cp->link = tmp->link;
+      tmp->link = cp;
     }
     tmp = tmp->link;
   }  

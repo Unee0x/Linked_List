@@ -10,7 +10,6 @@ int main( void ){
 
   
   for(int i=0;i < 10;i++){
-    //    int r = rand()%9+0;
     addNode(head, &n);
   }
 
@@ -18,7 +17,7 @@ int main( void ){
   insNode(head, &n, 3);
   showList(head);
 
-  //rmList(head);
+  rmList(head);
   
   return 0;
 }
