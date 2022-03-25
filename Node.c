@@ -38,7 +38,7 @@ void insNode(node_t head, void *data, int pos)
   node_t cp = Node(data);
   node_t tmp = NULL;
   tmp = head;
-  
+
   while( tmp != NULL ){
     if( tmp->pos == pos-1 ){
       cp->link = tmp->link;
@@ -55,7 +55,7 @@ void addNode(node_t head, void *data)
   
     tmp = head;
     while( tmp->link != NULL ){
-      //fprintf(stdout,"Skipped address %p\n", tmp);
+      fprintf(stdout,"Skipped address %p\n", tmp);
       tmp = tmp->link;
   }
     tmp->link = Node(data);
