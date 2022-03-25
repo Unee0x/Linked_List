@@ -55,7 +55,7 @@ void addNode(node_t head, void *data)
   
     tmp = head;
     while( tmp->link != NULL ){
-      fprintf(stdout,"Skipped address %p\n", tmp);
+      //fprintf(stdout,"Skipped address %p\n", tmp);
       tmp = tmp->link;
   }
     tmp->link = Node(data);
